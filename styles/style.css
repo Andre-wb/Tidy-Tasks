@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+body {
+    margin: 0;
+    background: #f7f7f7;
+    overflow-x: hidden;
+}
+header {
+    background: #fff;
+}
+.logo {
+    position: relative;
+    width: 30%;
+}
+a {
+    text-decoration: none;
+}
+.nav_link {
+    font-size: 20px;
+}
