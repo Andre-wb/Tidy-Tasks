@@ -1,22 +1,126 @@
 * {
     box-sizing: border-box;
     outline: none;
+    margin: 0;
+    padding: 0;
 }
 body {
     margin: 0;
     background: #f7f7f7;
     overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, a {
+    font-family: "Montserrat", sans-serif;
 }
 header {
     background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 70px;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
 }
 .logo {
     position: relative;
-    width: 30%;
+    height: 70px;
 }
+.header-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    width: 60px;
+    background: none;
+    border: none;
+    position: relative;
+}
+.header-menu_line {
+    background: #6D9886;
+    height: 7px;
+    border-radius: 7px;
+    width: 60px;
+    position: absolute;
+    transition: 0.3s;
+}
+#top_line {
+    top: 0;
+}
+#center_line {
+    top: 50%;
+    transform: translateY(-50%);
+}
+#bottom_line {
+    bottom: 0;
+}
+#top_line.active {
+    transform: rotate(-45deg) translateY(350%);
+}
+#center_line.active {
+    transform: rotate(45deg);
+    display: none;
+}
+#bottom_line.active {
+    transform: rotate(45deg) translateY(-350%) ;
+}
+
+nav.active {
+    top: 70px;
+}
+
+nav {
+    z-index: -1;
+    top: -70px;
+    transition: top 0.5s ease-in-out;
+}
+
 a {
     text-decoration: none;
 }
 .nav_link {
     font-size: 20px;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.nav_link:hover {
+    transform: scale(1.1);
+}
+nav:hover .nav_link:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+@media (max-width: 1024px){
+    .header-menu {
+        display: flex;
+    }
+    nav {
+        position: absolute;
+        z-index: -1;
+        width: 100vw;
+        top: -70px;
+        right: 0;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+        padding: 20px;
+        transition: 0.3s;
+    }
+    nav.active {
+        top: 70px;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 200px;
+        height: auto;
+    }
 }
