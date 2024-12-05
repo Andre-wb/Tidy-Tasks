@@ -15,4 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
             main.classList.toggle('active');
         });
     }
+    const loginButton = document.querySelector('.login');
+    const lordIcon = document.querySelector('#login-icon');
+
+// Добавляем слушатель событий на кнопку
+    loginButton.addEventListener('mouseenter', () => {
+        lordIcon.setAttribute('state', 'hover'); // Включаем анимацию
+    });
+
+    loginButton.addEventListener('mouseleave', () => {
+        lordIcon.setAttribute('state', 'intro'); // Возвращаем в исходное состояние
+    });
+
 });
