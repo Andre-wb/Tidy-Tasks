@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const topLine = document.getElementById('top_line');
     const centerLine = document.getElementById('center_line');
     const bottomLine = document.getElementById('bottom_line');
+    const icon = document.getElementById('login-icon');
 
     if (headerMenuButton && nav) {
         headerMenuButton.addEventListener('click', () => {
@@ -15,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             main.classList.toggle('active');
         });
     }
-    const icon = document.getElementById('login-icon');
 
     icon.parentElement.addEventListener('mouseenter', () => {
         icon.setAttribute('state', 'in-reveal');
