@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     icon.parentElement.addEventListener('mouseenter', () => {
-        icon.setAttribute('state', 'in-reveal');
+        icon.setAttribute('state', 'intro');
         setTimeout(() => icon.play(), 0);
     });
 });
